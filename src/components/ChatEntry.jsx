@@ -3,6 +3,14 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
+
+  const likeButtonClicked = () => {
+    props.onEachLikeToggle(props.id);
+
+  };
+
+  const like = props.liked ? '❤️' : '🤍';
+
   return (
     // Replace the outer tag name with a semantic element that fits our use case
     <main className="chat-entry local">
@@ -12,16 +20,20 @@ const ChatEntry = (props) => {
         <p className="entry-time">
           <TimeStamp time={props.timeStamp}></TimeStamp>
         </p>
-        <button className="like">🤍</button>
+        <button onClick={likeButtonClicked} className="like">{like}</button>
       </section>
     </main>
   );
 };
 
 ChatEntry.propTypes = {
+  id: PropTypes.number.isRequired,
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
+  liked: PropTypes.bool.isRequired,
+  onEachLikeToggle: PropTypes.func.isRequired,
+
 };
 
 export default ChatEntry;
