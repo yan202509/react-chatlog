@@ -3,3 +3,7 @@
   max-width: 0rem;
   background-color: red;
 }
+
+li {
+  list-style: none; 
+}

@@ -9,6 +9,8 @@ const App = () => {
   // Wave 1: only needs the first message
   // const firstMessageData = messageData[0];
   const [nowMessageData, setNowMessageData] = useState(messageData);
+  const user1 = 'Vladimir';
+  const user2 = 'Estragon';
 
   const toggleLike = (messageId) => {
     const nowMessages = nowMessageData.map(message => {
@@ -26,7 +28,7 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Chat between Two Person</h1>
+        <h1>Chat between {user1}and {user2}</h1>
         <h2>Total Liked Messages: {totalLikes} ❤️s</h2>
       </header>
 

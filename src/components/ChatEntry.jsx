@@ -13,16 +13,16 @@ const ChatEntry = (props) => {
 
   return (
     // Replace the outer tag name with a semantic element that fits our use case
-    <main className="chat-entry local">
+    <article className="chat-entry local">
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time">
-          <TimeStamp time={props.timeStamp}></TimeStamp>
+          <TimeStamp time={props.timeStamp} />
         </p>
         <button onClick={likeButtonClicked} className="like">{like}</button>
       </section>
-    </main>
+    </article>
   );
 };
 
